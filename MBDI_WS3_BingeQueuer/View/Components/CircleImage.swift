@@ -1,18 +1,19 @@
-//
-//  CircleImage.swift
-//  MBDI_WS3_BingeQueuer
-//
-//  Created by Emre Sağır on 21/02/2025.
-//
-
+// From: https://developer.apple.com/tutorials/swiftui/
 import SwiftUI
 
 struct CircleImage: View {
+    var image: Image
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        image
+            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            .overlay(
+                Circle().stroke(
+                    .white,
+                    lineWidth: 4))
+            .shadow(radius: 7)
     }
 }
 
-#Preview {
-    CircleImage()
+#Preview{
+    CircleImage(image: Image(.ourplanet))
 }
